@@ -4,7 +4,7 @@
     <AppBar />
 
     <v-main>
-      
+      <router-view />
     </v-main>
 
     <v-footer></v-footer>
@@ -18,7 +18,6 @@ import NavigationDrawer from "./components/NavigationDrawer.vue";
 import AppBar from "@/components/AppBar.vue";
 export default Vue.extend({
   name: "App",
-
   components: {
     NavigationDrawer,
     AppBar
