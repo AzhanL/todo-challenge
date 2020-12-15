@@ -48,18 +48,6 @@ export default class NavigationDrawer extends Vue {
       color: "blue darken-1",
       link: "/inbox",
     },
-    {
-      title: "Complete",
-      icon: "mdi-check-all",
-      color: "green",
-      link: "/complete",
-    },
-    {
-      title: "Incomplete",
-      icon: "mdi-calendar-text-outline",
-      color: "green",
-      link: "/incomplete",
-    },
   ];
 
   /**
