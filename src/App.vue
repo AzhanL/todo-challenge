@@ -1,24 +1,33 @@
 <template>
   <v-app>
+    <NavigationDrawer />
+    <AppBar />
+
     <v-main>
-      <SampleComponent msg="TODO: Create a todo list"/>
+      <v-container class="main-content">
+        <router-view />
+      </v-container>
     </v-main>
+
+    <v-footer></v-footer>
   </v-app>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import SampleComponent from './components/SampleComponent.vue';
-
+import Vue from "vue";
+import NavigationDrawer from "./components/NavigationDrawer.vue";
+import AppBar from "@/components/AppBar.vue";
 export default Vue.extend({
-  name: 'App',
-
+  name: "App",
   components: {
-    SampleComponent,
+    NavigationDrawer,
+    AppBar,
   },
-
-  data: () => ({
-    //
-  }),
 });
 </script>
+
+<style lang="sass" scoped>
+.main-content 
+  max-width: 810px
+
+</style>
