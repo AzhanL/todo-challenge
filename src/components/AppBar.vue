@@ -1,19 +1,12 @@
 <template>
    <div>
-      <v-app-bar color="px-5" dense dark flat>
+      <v-app-bar class="px-5" dense flat>
         <v-app-bar-nav-icon @click.stop="setNavbarVisibility(true)"></v-app-bar-nav-icon>
 
-        <v-toolbar-title>Page title</v-toolbar-title>
+        <v-toolbar-title>Todoer</v-toolbar-title>
 
         <v-spacer></v-spacer>
 
-        <v-btn icon>
-          <v-icon>mdi-heart</v-icon>
-        </v-btn>
-
-        <v-btn icon>
-          <v-icon>mdi-magnify</v-icon>
-        </v-btn>
       </v-app-bar>
     </div>
 
