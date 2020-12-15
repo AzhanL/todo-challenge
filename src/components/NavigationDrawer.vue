@@ -21,8 +21,8 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import "@/plugins/vuex";
-import { namespace } from "vuex-class";
 import { mdiInboxOutline } from "@mdi/js";
+import { namespace } from "vuex-class";
 
 // Extract the nav store
 const navStore = namespace("nav");
@@ -49,16 +49,16 @@ export default class NavigationDrawer extends Vue {
       link: "/inbox",
     },
     {
-      title: "Today",
-      icon: "mdi-calendar-outline",
+      title: "Complete",
+      icon: "mdi-check-all",
       color: "green",
-      link: "/today",
+      link: "/complete",
     },
     {
-      title: "Upcoming",
-      icon: "mdi-calendar-month-outline",
-      color: "purple",
-      link: "/upcoming",
+      title: "Incomplete",
+      icon: "mdi-calendar-text-outline",
+      color: "green",
+      link: "/incomplete",
     },
   ];
 

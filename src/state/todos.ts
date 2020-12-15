@@ -10,6 +10,7 @@ export type Todo = {
   title: string;
   description: string;
   dueDate: Date;
+  completed: boolean;
 };
 
 export const TodosStore: Module<TodosState, RootState> = {
@@ -26,13 +27,29 @@ export const TodosStore: Module<TodosState, RootState> = {
 
       state.todos.splice(position, 1);
     },
+    UPDATE_TODO(state, payload: Todo) {
+      const position = state.todos.findIndex((todo) => todo.id == payload.id);
+
+      state.todos.splice(position, 1, payload);
+    },
   },
   actions: {
-    addTodo({commit}, payload: Todo) {
-      commit('ADD_TODO', payload)
+    addTodo({ commit }, payload: Todo) {
+      commit("ADD_TODO", payload);
     },
-    removeTodo({commit}, id: number) {
-      commit('REMOVE_TODO', id)
-    }
+    removeTodo({ commit }, id: number) {
+      commit("REMOVE_TODO", id);
+    },
+    updateTodo({ commit }, payload: Todo) {
+      commit("UPDATE_TODO", payload);
+    },
+  },
+  getters: {
+    getIncompleted(state) {
+      return state.todos.filter((todo) => !todo.completed);
+    },
+    getCompleted(state) {
+      return state.todos.filter((todo) => todo.completed);
+    },
   },
 };
