@@ -4,7 +4,9 @@
     <AppBar />
 
     <v-main>
-      <router-view />
+      <v-container class="main-content">
+        <router-view />
+      </v-container>
     </v-main>
 
     <v-footer></v-footer>
@@ -13,14 +15,19 @@
 
 <script lang="ts">
 import Vue from "vue";
-import SampleComponent from "./components/SampleComponent.vue";
 import NavigationDrawer from "./components/NavigationDrawer.vue";
 import AppBar from "@/components/AppBar.vue";
 export default Vue.extend({
   name: "App",
   components: {
     NavigationDrawer,
-    AppBar
+    AppBar,
   },
 });
 </script>
+
+<style lang="sass" scoped>
+.main-content 
+  max-width: 810px
+
+</style>
