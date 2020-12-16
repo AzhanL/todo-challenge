@@ -8,6 +8,8 @@ Vue.use(VueRouter);
 
 const routes = [
   { path: "/inbox", component: InboxPage },
+  { path: "/complete", component: CompletedPage },
+  { path: "/incomplete", component: IncompletedPage },
   { path: "*", component: InboxPage },
 ];
 

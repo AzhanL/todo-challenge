@@ -81,7 +81,7 @@ export default class SampleComponent extends Vue {
     // Generate a 'somewhat' random numebr; chance of duplicate IDs
     this.newTodo.id = Math.floor(Math.random() * 1000000) + 1;
     // Make a copy of the current todo
-    const todo: Todo = JSON.parse(JSON.stringify(this.newTodo));
+    const todo: Todo = this.newTodo;
     todo.dueDate = new Date(this.date);
     // Add the todo
     this.addTodo(todo);
